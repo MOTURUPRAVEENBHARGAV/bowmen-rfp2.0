@@ -1,0 +1,404 @@
+[2025-07-03 14:07:16] [INFO] [agent_logger.bowmen_agent_pipeline:48] - Initializing GRCPipeline for collection: rfp_session_cfd645c831fe436ca2ff2fd7c769aaf9
+[2025-07-03 14:07:23] [INFO] [agent_logger.fastapi_server:78] - New session started: session_cfd645c831fe436ca2ff2fd7c769aaf9
+[2025-07-03 14:08:40] [INFO] [agent_logger.bowmen_agent_pipeline:48] - Initializing GRCPipeline for collection: rfp_session_383896d3b91b4d16baba46e2f3f718c3
+[2025-07-03 14:08:44] [INFO] [agent_logger.fastapi_server:78] - New session started: session_383896d3b91b4d16baba46e2f3f718c3
+[2025-07-03 14:08:51] [INFO] [agent_logger.bowmen_agent_pipeline:48] - Initializing GRCPipeline for collection: rfp_session_0934dbebc3f8452e90cacb88dc844677
+[2025-07-03 14:08:56] [INFO] [agent_logger.fastapi_server:78] - New session started: session_0934dbebc3f8452e90cacb88dc844677
+[2025-07-03 14:09:01] [ERROR] [agent_logger.fastapi_server:143] - Error during streaming for session session_0934dbebc3f8452e90cacb88dc844677: 'async for' requires an object with __aiter__ method, got generator
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 137, in event_generator
+    async for event_data in pipeline.run(
+TypeError: 'async for' requires an object with __aiter__ method, got generator
+[2025-07-03 14:12:07] [INFO] [agent_logger.bowmen_agent_pipeline:48] - Initializing GRCPipeline for collection: rfp_session_d1ce993f33694cc0a5ebdf66a13779fd
+[2025-07-03 14:12:12] [INFO] [agent_logger.fastapi_server:78] - New session started: session_d1ce993f33694cc0a5ebdf66a13779fd
+[2025-07-03 14:12:22] [ERROR] [agent_logger.fastapi_server:143] - Error during streaming for session session_d1ce993f33694cc0a5ebdf66a13779fd: 'async for' requires an object with __aiter__ method, got generator
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 137, in event_generator
+    async for event_data in pipeline.run(
+TypeError: 'async for' requires an object with __aiter__ method, got generator
+[2025-07-03 14:28:15] [INFO] [agent_logger.bowmen_agent_pipeline:55] - Initializing GRCPipeline for collection: rfp_session_f4e041a2c4314aa1be13b3cf564f4a76
+[2025-07-03 14:28:20] [INFO] [agent_logger.fastapi_server:130] - New session started: session_f4e041a2c4314aa1be13b3cf564f4a76
+[2025-07-03 14:28:27] [ERROR] [agent_logger.fastapi_server:224] - Error during streaming for session session_f4e041a2c4314aa1be13b3cf564f4a76: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 213, in event_generator
+    async for event_data in pipeline.run(
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\bowmen_agent.py", line 133, in run
+    router_response = await self.router_agent.route_query(work_notes_manager, user_question, context=active_context_str)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:30:26] [INFO] [agent_logger.bowmen_agent_pipeline:55] - Initializing GRCPipeline for collection: rfp_session_7034d732736745a5bcaa7676047d0f8b
+[2025-07-03 14:30:31] [INFO] [agent_logger.fastapi_server:130] - New session started: session_7034d732736745a5bcaa7676047d0f8b
+[2025-07-03 14:30:39] [ERROR] [agent_logger.fastapi_server:224] - Error during streaming for session session_7034d732736745a5bcaa7676047d0f8b: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 213, in event_generator
+    async for event_data in pipeline.run(
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\bowmen_agent.py", line 133, in run
+    router_response = await self.router_agent.route_query(work_notes_manager, user_question, context=active_context_str)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:36:29] [INFO] [agent_logger.bowmen_agent_pipeline:55] - Initializing GRCPipeline for collection: rfp_session_6a2bda66ca634fe092a9da60538453d9
+[2025-07-03 14:36:36] [INFO] [agent_logger.fastapi_server:130] - New session started: session_6a2bda66ca634fe092a9da60538453d9
+[2025-07-03 14:36:42] [ERROR] [agent_logger.router_agent:38] - Router agent failed: object dict can't be used in 'await' expression. Defaulting to REJECT.
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\router.py", line 35, in route_query
+    response = await chain.invoke({"query": query})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:37:42] [INFO] [agent_logger.bowmen_agent_pipeline:55] - Initializing GRCPipeline for collection: rfp_session_9f8e2aa625ce4d3ebca306fa9943ecf4
+[2025-07-03 14:37:49] [INFO] [agent_logger.fastapi_server:130] - New session started: session_9f8e2aa625ce4d3ebca306fa9943ecf4
+[2025-07-03 14:38:05] [INFO] [agent_logger.tools_agent:75] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "what is ibm openpages?", "top_k": 5}
+[2025-07-03 14:38:09] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:38:10] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:38:12] [ERROR] [agent_logger.evidence_agent:68] - Gap analysis agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 64, in run_gap_analysis
+    result = await chain.invoke({"query": query, "evidence": combined_evidence, "context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:38:13] [ERROR] [agent_logger.query_rephraser:72] - Query Rephraser failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 65, in refine_query
+    result = await chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:38:13] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query (non-streaming).
+[2025-07-03 14:38:16] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query (non-streaming).
+[2025-07-03 14:38:18] [ERROR] [agent_logger.fastapi_server:224] - Error during streaming for session session_9f8e2aa625ce4d3ebca306fa9943ecf4: RetryError[<Future at 0x1b866f7c980 state=finished raised TypeError>]
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\tenacity\asyncio\__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\answering_agent.py", line 42, in make_final_answer
+    response = await chain.invoke({"query": query, "evidence": evidence, "context": context_str})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object AIMessage can't be used in 'await' expression
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 213, in event_generator
+    async for event_data in pipeline.run(
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\bowmen_agent.py", line 219, in run
+    answer_obj = await self.answer_agent.make_final_answer(work_notes_manager, user_question, combined_evidence, active_context_str)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\tenacity\asyncio\__init__.py", line 189, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\tenacity\asyncio\__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\tenacity\asyncio\__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\tenacity\_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\tenacity\__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x1b866f7c980 state=finished raised TypeError>]
+[2025-07-03 14:39:34] [INFO] [agent_logger.bowmen_agent_pipeline:55] - Initializing GRCPipeline for collection: rfp_session_df73e433576843e7b11f1f02f0079284
+[2025-07-03 14:39:41] [INFO] [agent_logger.fastapi_server:130] - New session started: session_df73e433576843e7b11f1f02f0079284
+[2025-07-03 14:39:54] [INFO] [agent_logger.tools_agent:75] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "what is ibm openpages?", "top_k": 5}
+[2025-07-03 14:39:57] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:39:58] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:40:01] [ERROR] [agent_logger.evidence_agent:68] - Gap analysis agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 64, in run_gap_analysis
+    result = await chain.invoke({"query": query, "evidence": combined_evidence, "context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:40:03] [ERROR] [agent_logger.query_rephraser:72] - Query Rephraser failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 65, in refine_query
+    result = await chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:40:03] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query (non-streaming).
+[2025-07-03 14:45:29] [INFO] [agent_logger.bowmen_agent_pipeline:50] - Initializing GRCPipeline for collection: rfp_session_b0f060d4ca0c4dee88eef744d0859ac6
+[2025-07-03 14:45:36] [INFO] [agent_logger.fastapi_server:130] - New session started: session_b0f060d4ca0c4dee88eef744d0859ac6
+[2025-07-03 14:45:57] [INFO] [agent_logger.tools_agent:75] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "what is ibm openpages?", "top_k": 5}
+[2025-07-03 14:46:00] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:46:01] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:46:03] [ERROR] [agent_logger.evidence_agent:68] - Gap analysis agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 64, in run_gap_analysis
+    result = await chain.invoke({"query": query, "evidence": combined_evidence, "context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:46:04] [ERROR] [agent_logger.query_rephraser:72] - Query Rephraser failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 65, in refine_query
+    result = await chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:46:04] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query (non-streaming).
+[2025-07-03 14:48:22] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_session_4cd8b0825d2640eb931aef02b33b7e48
+[2025-07-03 14:48:29] [INFO] [agent_logger.fastapi_server:130] - New session started: session_4cd8b0825d2640eb931aef02b33b7e48
+[2025-07-03 14:48:42] [INFO] [agent_logger.tools_agent:75] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "what is ibm openpages?", "top_k": 5}
+[2025-07-03 14:48:45] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:48:46] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:48:48] [ERROR] [agent_logger.evidence_agent:68] - Gap analysis agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 64, in run_gap_analysis
+    result = await chain.invoke({"query": query, "evidence": combined_evidence, "context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:48:49] [ERROR] [agent_logger.query_rephraser:72] - Query Rephraser failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 65, in refine_query
+    result = await chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:48:49] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query (non-streaming).
+[2025-07-03 14:55:42] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_session_c30b1d7fb9b14e779e7cc574bd1629b3
+[2025-07-03 14:55:48] [INFO] [agent_logger.fastapi_server:130] - New session started: session_c30b1d7fb9b14e779e7cc574bd1629b3
+[2025-07-03 14:56:21] [INFO] [agent_logger.tools_agent:75] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "what is ibm openpages?", "top_k": 5}
+[2025-07-03 14:56:24] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:56:25] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:56:27] [ERROR] [agent_logger.evidence_agent:68] - Gap analysis agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 64, in run_gap_analysis
+    result = await chain.invoke({"query": query, "evidence": combined_evidence, "context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:56:28] [ERROR] [agent_logger.query_rephraser:72] - Query Rephraser failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 65, in refine_query
+    result = await chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:56:28] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query (non-streaming).
+[2025-07-03 14:57:11] [INFO] [agent_logger.tools_agent:75] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "does the IBM OpenPages support multi language?", "top_k": 5}
+[2025-07-03 14:57:14] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:57:14] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:57:17] [ERROR] [agent_logger.evidence_agent:68] - Gap analysis agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 64, in run_gap_analysis
+    result = await chain.invoke({"query": query, "evidence": combined_evidence, "context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:57:17] [ERROR] [agent_logger.query_rephraser:72] - Query Rephraser failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 65, in refine_query
+    result = await chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 14:57:17] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query (non-streaming).
+[2025-07-03 15:37:47] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_session_a13a50ad80714843a9c0dadc8ec5c02a
+[2025-07-03 15:37:57] [INFO] [agent_logger.fastapi_server:131] - New session started: session_a13a50ad80714843a9c0dadc8ec5c02a
+[2025-07-03 15:39:56] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_se_123456
+[2025-07-03 15:40:05] [INFO] [agent_logger.fastapi_server:135] - New session started: se_123456
+[2025-07-03 15:42:53] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_se_123456
+[2025-07-03 15:43:03] [INFO] [agent_logger.fastapi_server:135] - New session started: se_123456
+[2025-07-03 15:43:12] [INFO] [agent_logger.fastapi_server:165] - Attempting to index file 'my_test_document.txt' for session se_123456 to http://109.228.59.105:9014/index-files/
+[2025-07-03 15:43:14] [ERROR] [agent_logger.fastapi_server:190] - Indexer responded with error for session se_123456: {"detail":"An internal server error occurred: 400: Could not process any valid documents from the provided files."}
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 168, in index_file
+    indexer_response.raise_for_status()
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://109.228.59.105:9014/index-files/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+[2025-07-03 15:46:57] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_se_123456
+[2025-07-03 15:47:06] [INFO] [agent_logger.fastapi_server:135] - New session started: se_123456
+[2025-07-03 15:49:35] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_se_123456
+[2025-07-03 15:49:44] [INFO] [agent_logger.fastapi_server:135] - New session started: se_123456
+[2025-07-03 15:49:49] [INFO] [agent_logger.fastapi_server:165] - Attempting to index file 'my_test_document.txt' for session se_123456 to http://109.228.59.105:9014/index-files/
+[2025-07-03 15:49:51] [ERROR] [agent_logger.fastapi_server:190] - Indexer responded with error for session se_123456: {"detail":"An internal server error occurred: 400: Could not process any valid documents from the provided files."}
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 168, in index_file
+    indexer_response.raise_for_status()
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://109.228.59.105:9014/index-files/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+[2025-07-03 15:52:01] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_se_123456
+[2025-07-03 15:52:10] [INFO] [agent_logger.fastapi_server:135] - New session started: se_123456
+[2025-07-03 15:52:10] [INFO] [agent_logger.fastapi_server:165] - Attempting to index file 'my_test_document.txt' for session se_123456 to http://109.228.59.105:9014/index-files/
+[2025-07-03 15:52:12] [ERROR] [agent_logger.fastapi_server:190] - Indexer responded with error for session se_123456: {"detail":"An internal server error occurred: 400: Could not process any valid documents from the provided files."}
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 168, in index_file
+    indexer_response.raise_for_status()
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://109.228.59.105:9014/index-files/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+[2025-07-03 16:00:44] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_se_123456
+[2025-07-03 16:00:50] [INFO] [agent_logger.fastapi_server:135] - New session started: se_123456
+[2025-07-03 16:00:54] [INFO] [agent_logger.fastapi_server:165] - Attempting to index file 'test.txt' for session se_123456 to http://109.228.59.105:9014/index-files/
+[2025-07-03 16:00:55] [ERROR] [agent_logger.fastapi_server:190] - Indexer responded with error for session se_123456: {"detail":"An internal server error occurred: 400: Could not process any valid documents from the provided files."}
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 168, in index_file
+    indexer_response.raise_for_status()
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://109.228.59.105:9014/index-files/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+[2025-07-03 16:03:18] [INFO] [agent_logger.fastapi_server:165] - Attempting to index file 'test.txt' for session se_123456 to http://109.228.59.105:9014/index-files/
+[2025-07-03 16:03:20] [ERROR] [agent_logger.fastapi_server:190] - Indexer responded with error for session se_123456: {"detail":"An internal server error occurred: 400: Could not process any valid documents from the provided files."}
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 168, in index_file
+    indexer_response.raise_for_status()
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://109.228.59.105:9014/index-files/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+[2025-07-03 16:04:28] [INFO] [agent_logger.fastapi_server:165] - Attempting to index file 'test.pdf' for session se_123456 to http://109.228.59.105:9014/index-files/
+[2025-07-03 16:04:29] [ERROR] [agent_logger.fastapi_server:190] - Indexer responded with error for session se_123456: {"detail":"An internal server error occurred: 400: Could not process any valid documents from the provided files."}
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 168, in index_file
+    indexer_response.raise_for_status()
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://109.228.59.105:9014/index-files/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+[2025-07-03 16:05:57] [INFO] [agent_logger.fastapi_server:165] - Attempting to index file 'document_with_text.pdf' for session se_123456 to http://109.228.59.105:9014/index-files/
+[2025-07-03 16:05:58] [ERROR] [agent_logger.fastapi_server:190] - Indexer responded with error for session se_123456: {"detail":"An internal server error occurred: 400: Could not process any valid documents from the provided files."}
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 168, in index_file
+    indexer_response.raise_for_status()
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://109.228.59.105:9014/index-files/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+[2025-07-03 16:06:15] [INFO] [agent_logger.fastapi_server:165] - Attempting to index file 'document_with_text.pdf' for session se_123456 to http://109.228.59.105:9014/index-files/
+[2025-07-03 16:06:16] [ERROR] [agent_logger.fastapi_server:190] - Indexer responded with error for session se_123456: {"detail":"An internal server error occurred: 400: Could not process any valid documents from the provided files."}
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\agent_client.py", line 168, in index_file
+    indexer_response.raise_for_status()
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://109.228.59.105:9014/index-files/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+[2025-07-03 16:07:46] [INFO] [agent_logger.fastapi_server:165] - Attempting to index file 'document_with_text.pdf' for session se_123456 to http://109.228.59.105:9014/index-files/
+[2025-07-03 16:07:58] [INFO] [agent_logger.fastapi_server:177] - File 'document_with_text.pdf' indexed successfully for session se_123456.
+[2025-07-03 16:08:43] [INFO] [agent_logger.fastapi_server:215] - Using in-memory has_document status for session se_123456: True
+[2025-07-03 16:08:44] [ERROR] [agent_logger.contextual_agent:70] - Context request analysis failed for query 'what is ibm openpages?': object str can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\contexual_agent.py", line 66, in is_context_required
+    response = await chain.invoke({"query": query})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object str can't be used in 'await' expression
+[2025-07-03 16:08:45] [INFO] [agent_logger.tools_agent:75] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "what is ibm openpages?", "top_k": 5}
+[2025-07-03 16:08:48] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 16:08:49] [ERROR] [agent_logger.evidence_agent:47] - Quick filter agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 41, in run_quick_relevance_check
+    result = await chain.invoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 16:08:51] [ERROR] [agent_logger.evidence_agent:68] - Gap analysis agent failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 64, in run_gap_analysis
+    result = await chain.invoke({"query": query, "evidence": combined_evidence, "context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 16:08:52] [ERROR] [agent_logger.query_rephraser:72] - Query Rephraser failed: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 65, in refine_query
+    result = await chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+[2025-07-03 16:08:52] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query (non-streaming).
+[2025-07-03 17:16:49] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_session_1b8f6f53-1b4d-4a5a-afd3-6a590e94e2e4
+[2025-07-03 17:17:00] [INFO] [agent_logger.fastapi_server:135] - New session started: session_1b8f6f53-1b4d-4a5a-afd3-6a590e94e2e4
+[2025-07-03 17:17:17] [INFO] [agent_logger.fastapi_server:215] - Using in-memory has_document status for session session_1b8f6f53-1b4d-4a5a-afd3-6a590e94e2e4: False
+[2025-07-03 17:17:36] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_session_29eed6a3-9b3a-47d0-b241-ca1cc441c76b
+[2025-07-03 17:17:42] [INFO] [agent_logger.fastapi_server:135] - New session started: session_29eed6a3-9b3a-47d0-b241-ca1cc441c76b
+[2025-07-03 17:23:49] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_session_985c0877-6be3-42fd-8cb6-953c57d9ec40
+[2025-07-03 17:23:55] [INFO] [agent_logger.fastapi_server:135] - New session started: session_985c0877-6be3-42fd-8cb6-953c57d9ec40
+[2025-07-03 22:33:21] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_python_test_session_001
+[2025-07-03 22:33:27] [ERROR] [agent_logger.contextual_agent:70] - Context request analysis failed for query 'Can you tell me a fun fact about Python?': object str can't be used in 'await' expression
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\contexual_agent.py", line 66, in is_context_required
+    response = await chain.invoke({"query": query})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object str can't be used in 'await' expression
+[2025-07-03 22:36:42] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_python_test_session_001
+[2025-07-03 22:36:46] [ERROR] [agent_logger.contextual_agent:70] - Context request analysis failed for query 'Can you tell me a fun fact about Python?': object str can't be used in 'await' expression
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\contexual_agent.py", line 66, in is_context_required
+    response = await chain.invoke({"query": query})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object str can't be used in 'await' expression
+[2025-07-03 22:38:43] [INFO] [agent_logger.bowmen_agent_pipeline:51] - Initializing GRCPipeline for collection: rfp_python_test_session_001
+[2025-07-03 22:38:47] [ERROR] [agent_logger.contextual_agent:70] - Context request analysis failed for query 'Can you tell me a fun fact about Python?': object str can't be used in 'await' expression
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\contexual_agent.py", line 66, in is_context_required
+    response = await chain.invoke({"query": query})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object str can't be used in 'await' expression
+[2025-07-03 22:51:58] [INFO] [agent_logger.bowmen_agent_pipeline:47] - Initializing GRCPipeline for collection: rfp_python_test_session_001
+[2025-07-03 22:51:59] [ERROR] [agent_logger.contextual_agent:70] - Context request analysis failed for query 'Can you tell me a fun fact about Python?': object str can't be used in 'await' expression
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\contexual_agent.py", line 66, in is_context_required
+    response = await chain.invoke({"query": query})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object str can't be used in 'await' expression
+[2025-07-03 22:54:09] [INFO] [agent_logger.bowmen_agent_pipeline:47] - Initializing GRCPipeline for collection: rfp_python_test_session_001
+[2025-07-03 23:10:16] [INFO] [agent_logger.bowmen_agent_pipeline:47] - Initializing GRCPipeline for collection: rfp_"session_1751564406099"

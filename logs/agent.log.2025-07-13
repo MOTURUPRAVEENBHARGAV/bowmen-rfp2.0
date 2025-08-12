@@ -1,0 +1,1615 @@
+[2025-07-13 12:04:41] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_0793365a736d82abe6a14e79386cd46e
+[2025-07-13 12:04:41] [INFO] [agent_logger.bowmen_agent_pipeline:95] - GRCPipeline run started. Question: 'Historical View of Control Behavior and Characteri...'. Received session_has_document flag: False
+[2025-07-13 12:04:45] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "How can I enable the creation of a historical perspective on the behavior and characteristics of controls in IBM OpenPages?", "top_k": 5}
+[2025-07-13 12:04:52] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-13 12:06:59] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_0793365a736d82abe6a14e79386cd46e
+[2025-07-13 12:06:59] [INFO] [agent_logger.bowmen_agent_pipeline:95] - GRCPipeline run started. Question: 'so what is IMR framewrok...'. Received session_has_document flag: False
+[2025-07-13 12:07:02] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "What is the IBM OpenPages IMR framework?", "top_k": 5}
+[2025-07-13 12:07:06] [ERROR] [agent_logger.evidence_agent:52] - Quick filter agent failed: Invalid json output: Since there is no specific publication date mentioned in the provided evidence, I will assume it is recent enough to be considered. The evidence provided is topically relevant to the query about the IBM OpenPages IMR framework as it describes the Issue Management and Remediation (IMR) process, its key activities, and how it operates within IBM OpenPages.
+
+{"is_relevant": true}
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 45, in run_quick_relevance_check
+    result = await chain.ainvoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: Since there is no specific publication date mentioned in the provided evidence, I will assume it is recent enough to be considered. The evidence provided is topically relevant to the query about the IBM OpenPages IMR framework as it describes the Issue Management and Remediation (IMR) process, its key activities, and how it operates within IBM OpenPages.
+
+{"is_relevant": true}
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:07:17] [ERROR] [agent_logger.evidence_agent:85] - Gap analysis agent failed: Invalid json output: To determine the sufficiency of the evidence in addressing the query about the IMR framework, let's analyze the provided information step by step.
+
+1. **Understanding the Query**: The user is asking about the IMR (Issue Management and Remediation) framework, specifically what it is.
+
+2. **Analyzing the Evidence**: The evidence provided includes various sections related to IBM OpenPages GRC, including its solutions, sample workflows, and specific features like control mapping and project management functionality.
+
+3. **Relevance to IMR Framework**: 
+   - The section on "**IBM OpenPages GRC solutions**" mentions "Issue Management and Remediation" as part of its solutions, indicating that IMR is a component of IBM OpenPages GRC.
+   - The "**Sample workflows**" section includes an "Issue Review workflow" which is part of the IMR framework, showing how issues are managed and remediated within the system.
+   - Specific questions and answers, such as the one about recording and linking mitigation activities to existing controls or creating new controls, highlight the functionality of IMR within IBM OpenPages.
+
+4. **Explicit Details for Key Information**: The evidence explicitly mentions the IMR framework and its role in managing and remediating issues, including the ability to track progress on risk-related initiatives. It provides details on how IMR works within the context of IBM OpenPages GRC, such as through specific workflows and the ability to link mitigation activities to controls.
+
+5. **Conclusion**: Given the explicit mentions of the IMR framework, its components, and how it functions within IBM OpenPages GRC, the evidence sufficiently addresses the query about what the IMR framework is.
+
+The final answer is: $\boxed{true}$
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 80, in run_gap_analysis
+    result_content = await chain.ainvoke({"query": query, "evidence": combined_evidence, "context": context_str})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: To determine the sufficiency of the evidence in addressing the query about the IMR framework, let's analyze the provided information step by step.
+
+1. **Understanding the Query**: The user is asking about the IMR (Issue Management and Remediation) framework, specifically what it is.
+
+2. **Analyzing the Evidence**: The evidence provided includes various sections related to IBM OpenPages GRC, including its solutions, sample workflows, and specific features like control mapping and project management functionality.
+
+3. **Relevance to IMR Framework**: 
+   - The section on "**IBM OpenPages GRC solutions**" mentions "Issue Management and Remediation" as part of its solutions, indicating that IMR is a component of IBM OpenPages GRC.
+   - The "**Sample workflows**" section includes an "Issue Review workflow" which is part of the IMR framework, showing how issues are managed and remediated within the system.
+   - Specific questions and answers, such as the one about recording and linking mitigation activities to existing controls or creating new controls, highlight the functionality of IMR within IBM OpenPages.
+
+4. **Explicit Details for Key Information**: The evidence explicitly mentions the IMR framework and its role in managing and remediating issues, including the ability to track progress on risk-related initiatives. It provides details on how IMR works within the context of IBM OpenPages GRC, such as through specific workflows and the ability to link mitigation activities to controls.
+
+5. **Conclusion**: Given the explicit mentions of the IMR framework, its components, and how it functions within IBM OpenPages GRC, the evidence sufficiently addresses the query about what the IMR framework is.
+
+The final answer is: $\boxed{true}$
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:07:18] [ERROR] [agent_logger.query_rephraser:87] - Query Rephraser failed: Invalid json output: Based on the Original User Query and the generic Feedback, I will create a more specific version of the query. 
+
+{"rephrased_question": "What are the key components and applications of the IMR framework?"}
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 80, in refine_query
+    result = await chain.ainvoke({
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: Based on the Original User Query and the generic Feedback, I will create a more specific version of the query. 
+
+{"rephrased_question": "What are the key components and applications of the IMR framework?"}
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:07:18] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "so what is IMR framewrok", "top_k": 5}
+[2025-07-13 12:07:30] [ERROR] [agent_logger.evidence_agent:85] - Gap analysis agent failed: Invalid json output: To determine if the evidence is sufficient to answer the user's query about the IMR framework, let's analyze the provided information step by step.
+
+1. **Understanding the Query**: The user is asking about the IMR (Issue Management and Remediation) framework, specifically what it is.
+
+2. **Analyzing the Evidence**: The evidence provided includes detailed descriptions of IBM OpenPages' features, including its support for Issue Management and Remediation (IMR) processes. It outlines how IMR operates within the platform, including issue creation, action item assignment, remediation performance, issue closure, and reporting. Additionally, there are mentions of IMR in the context of managing risks, controls, and mitigation activities.
+
+3. **Key Details**: The evidence explicitly addresses the IMR framework, explaining its purpose, components, and how it functions within IBM OpenPages. This includes the ability to create issues, assign actions, track remediation, and report on progress, which directly relates to the management of risks and mitigation activities.
+
+4. **Conclusion**: Given that the evidence provides a comprehensive overview of the IMR framework, including its key components and how it is used within IBM OpenPages for risk management and mitigation, it can be concluded that the evidence is sufficient to answer the user's query about what the IMR framework is.
+
+The final answer is: $\boxed{true}$
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 80, in run_gap_analysis
+    result_content = await chain.ainvoke({"query": query, "evidence": combined_evidence, "context": context_str})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: To determine if the evidence is sufficient to answer the user's query about the IMR framework, let's analyze the provided information step by step.
+
+1. **Understanding the Query**: The user is asking about the IMR (Issue Management and Remediation) framework, specifically what it is.
+
+2. **Analyzing the Evidence**: The evidence provided includes detailed descriptions of IBM OpenPages' features, including its support for Issue Management and Remediation (IMR) processes. It outlines how IMR operates within the platform, including issue creation, action item assignment, remediation performance, issue closure, and reporting. Additionally, there are mentions of IMR in the context of managing risks, controls, and mitigation activities.
+
+3. **Key Details**: The evidence explicitly addresses the IMR framework, explaining its purpose, components, and how it functions within IBM OpenPages. This includes the ability to create issues, assign actions, track remediation, and report on progress, which directly relates to the management of risks and mitigation activities.
+
+4. **Conclusion**: Given that the evidence provides a comprehensive overview of the IMR framework, including its key components and how it is used within IBM OpenPages for risk management and mitigation, it can be concluded that the evidence is sufficient to answer the user's query about what the IMR framework is.
+
+The final answer is: $\boxed{true}$
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:07:32] [ERROR] [agent_logger.query_rephraser:87] - Query Rephraser failed: Invalid json output: Based on the Original User Query and the generic Feedback, I will create a more specific version of the query. 
+
+{"rephrased_question": "What are the key components and applications of the IMR framework?"}
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 80, in refine_query
+    result = await chain.ainvoke({
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: Based on the Original User Query and the generic Feedback, I will create a more specific version of the query. 
+
+{"rephrased_question": "What are the key components and applications of the IMR framework?"}
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:07:39] [ERROR] [agent_logger.evidence_agent:85] - Gap analysis agent failed: Invalid json output: To determine if the evidence is sufficient to answer the user's query about the IMR framework, let's analyze the provided information step by step.
+
+1. **Understanding the Query**: The user is asking about the IMR (Issue Management and Remediation) framework, specifically what it is.
+
+2. **Analyzing the Evidence**: The evidence provided includes detailed descriptions of IBM OpenPages' features, including its support for Issue Management and Remediation (IMR) processes. It outlines how IMR operates within the platform, including issue creation, action item assignment, remediation performance, issue closure, and reporting. Additionally, there are mentions of IMR in the context of managing risks, controls, and mitigation activities.
+
+3. **Key Details**: The evidence explicitly addresses the IMR framework, explaining its purpose, components, and how it functions within IBM OpenPages. This includes the ability to create issues, assign actions, track remediation, and report on progress, which directly relates to the management of risks and mitigation activities.
+
+4. **Conclusion**: Given that the evidence provides a comprehensive overview of the IMR framework, including its key components and how it is used within IBM OpenPages for risk management and mitigation, it can be concluded that the evidence is sufficient to answer the user's query about what the IMR framework is.
+
+The final answer is: $\boxed{true}$
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 80, in run_gap_analysis
+    result_content = await chain.ainvoke({"query": query, "evidence": combined_evidence, "context": context_str})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: To determine if the evidence is sufficient to answer the user's query about the IMR framework, let's analyze the provided information step by step.
+
+1. **Understanding the Query**: The user is asking about the IMR (Issue Management and Remediation) framework, specifically what it is.
+
+2. **Analyzing the Evidence**: The evidence provided includes detailed descriptions of IBM OpenPages' features, including its support for Issue Management and Remediation (IMR) processes. It outlines how IMR operates within the platform, including issue creation, action item assignment, remediation performance, issue closure, and reporting. Additionally, there are mentions of IMR in the context of managing risks, controls, and mitigation activities.
+
+3. **Key Details**: The evidence explicitly addresses the IMR framework, explaining its purpose, components, and how it functions within IBM OpenPages. This includes the ability to create issues, assign actions, track remediation, and report on progress, which directly relates to the management of risks and mitigation activities.
+
+4. **Conclusion**: Given that the evidence provides a comprehensive overview of the IMR framework, including its key components and how it is used within IBM OpenPages for risk management and mitigation, it can be concluded that the evidence is sufficient to answer the user's query about what the IMR framework is.
+
+The final answer is: $\boxed{true}$
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:07:40] [ERROR] [agent_logger.query_rephraser:87] - Query Rephraser failed: Invalid json output: Based on the Original User Query and the generic Feedback, I will create a more specific version of the query. 
+
+{"rephrased_question": "What are the key components and applications of the IMR framework?"}
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 80, in refine_query
+    result = await chain.ainvoke({
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: Based on the Original User Query and the generic Feedback, I will create a more specific version of the query. 
+
+{"rephrased_question": "What are the key components and applications of the IMR framework?"}
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:07:40] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-13 12:11:36] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_0793365a736d82abe6a14e79386cd46e
+[2025-07-13 12:11:36] [INFO] [agent_logger.bowmen_agent_pipeline:95] - GRCPipeline run started. Question: 'so what is IMR framewrok...'. Received session_has_document flag: False
+[2025-07-13 12:11:38] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "What is the IBM OpenPages IMR framework?", "top_k": 5}
+[2025-07-13 12:11:43] [ERROR] [agent_logger.evidence_agent:52] - Quick filter agent failed: Invalid json output: Since there is no specific publication date mentioned in the provided evidence, I will assume it is recent enough to be considered. The evidence provided is topically relevant to the query about the IBM OpenPages IMR framework as it describes the Issue Management and Remediation (IMR) process, its key activities, and how it operates within IBM OpenPages.
+
+{"is_relevant": true}
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 45, in run_quick_relevance_check
+    result = await chain.ainvoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: Since there is no specific publication date mentioned in the provided evidence, I will assume it is recent enough to be considered. The evidence provided is topically relevant to the query about the IBM OpenPages IMR framework as it describes the Issue Management and Remediation (IMR) process, its key activities, and how it operates within IBM OpenPages.
+
+{"is_relevant": true}
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:11:47] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-13 12:16:45] [ERROR] [agent_logger.router_agent:25] - Failed to load prompts: Router prompt not found in prompts.yml. Using fallback prompt.
+[2025-07-13 12:17:08] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_02c014890f1aa3d41672c5e9a2a30a2b
+[2025-07-13 12:17:08] [INFO] [agent_logger.bowmen_agent_pipeline:95] - GRCPipeline run started. Question: 'V...'. Received session_has_document flag: False
+[2025-07-13 12:17:08] [WARNING] [agent_logger.router_agent:53] - LLM failed: 'Input to ChatPromptTemplate is missing variables {\'"decision"\'}.  Expected: [\'"decision"\', \'context\', \'query\'] Received: [\'query\', \'context\']\nNote: if you intended {"decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"decision"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '. Retrying with fallback prompt.
+[2025-07-13 12:17:08] [ERROR] [agent_logger.router_agent:69] - Fallback failed: 'Input to ChatPromptTemplate is missing variables {\'"decision"\'}.  Expected: [\'"decision"\', \'context\', \'query\'] Received: [\'query\', \'context\']\nNote: if you intended {"decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"decision"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '. Defaulting to ACCEPT for GRC query.
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\router.py", line 66, in route_query
+    llm_response = await chain.ainvoke({"query": query, "context": context_str})
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'"decision"\'}.  Expected: [\'"decision"\', \'context\', \'query\'] Received: [\'query\', \'context\']\nNote: if you intended {"decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"decision"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+[2025-07-13 12:17:40] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_02c014890f1aa3d41672c5e9a2a30a2b
+[2025-07-13 12:17:40] [INFO] [agent_logger.bowmen_agent_pipeline:95] - GRCPipeline run started. Question: 'Detailed Risk Identification and Management: 
+
+i. ...'. Received session_has_document flag: False
+[2025-07-13 12:17:40] [WARNING] [agent_logger.router_agent:53] - LLM failed: 'Input to ChatPromptTemplate is missing variables {\'"decision"\'}.  Expected: [\'"decision"\', \'context\', \'query\'] Received: [\'query\', \'context\']\nNote: if you intended {"decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"decision"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '. Retrying with fallback prompt.
+[2025-07-13 12:17:40] [ERROR] [agent_logger.router_agent:69] - Fallback failed: 'Input to ChatPromptTemplate is missing variables {\'"decision"\'}.  Expected: [\'"decision"\', \'context\', \'query\'] Received: [\'query\', \'context\']\nNote: if you intended {"decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"decision"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '. Defaulting to ACCEPT for GRC query.
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\router.py", line 66, in route_query
+    llm_response = await chain.ainvoke({"query": query, "context": context_str})
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'"decision"\'}.  Expected: [\'"decision"\', \'context\', \'query\'] Received: [\'query\', \'context\']\nNote: if you intended {"decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"decision"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+[2025-07-13 12:19:27] [ERROR] [agent_logger.router_agent:26] - Failed to load prompts: Router prompt not found in prompts.yml. Using fallback prompt.
+[2025-07-13 12:19:46] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_02c014890f1aa3d41672c5e9a2a30a2b
+[2025-07-13 12:19:46] [INFO] [agent_logger.bowmen_agent_pipeline:95] - GRCPipeline run started. Question: 'Detailed Risk Identification and Management:
+
+i. C...'. Received session_has_document flag: False
+[2025-07-13 12:19:46] [WARNING] [agent_logger.router_agent:54] - LLM failed: 'Input to ChatPromptTemplate is missing variables {\'"decision"\'}.  Expected: [\'"decision"\', \'context\', \'query\'] Received: [\'query\', \'context\', \'decision\']\nNote: if you intended {"decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"decision"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '. Retrying with fallback prompt.
+[2025-07-13 12:19:46] [ERROR] [agent_logger.router_agent:70] - Fallback failed: 'Input to ChatPromptTemplate is missing variables {\'"decision"\'}.  Expected: [\'"decision"\', \'context\', \'query\'] Received: [\'query\', \'context\', \'decision\']\nNote: if you intended {"decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"decision"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '. Defaulting to ACCEPT for GRC query.
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\router.py", line 67, in route_query
+    llm_response = await chain.ainvoke({"query": query, "context": context_str, "decision": "PENDING"})
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'"decision"\'}.  Expected: [\'"decision"\', \'context\', \'query\'] Received: [\'query\', \'context\', \'decision\']\nNote: if you intended {"decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"decision"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+[2025-07-13 12:19:46] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Detailed Risk Identification and Management:\n\ni. Capture inherent and residual risk details, including response strategies, risk status, expected response dates, and mitigating controls.\n\nii. Collecting, storing and managing KRIs, with the possibility of including evidence and a description in the event of a breach. If possible, integrate with other media, such as Slack, for reminders, questions and so on.\n\niii. Link risks with Key Risk Indicators (KRIs), loss events, risk reviews, and records. Confidential SumUp Limited GRC System Request for Information Date: Jan 22nd, 2024,\n\niv. Enable risk approval workflows based on predefined thresholds (example: low risks can be accepted by a certain user, critical risks must be escalated for another user or subset of users - such as a CRO or Board).\n\nv. Facilitate association of risks with company objectives and business processes.\n\nvi. Support n-to-n (many-to-many) associations, enabling the flexible linkage of any number of controls to any number of risks. This functionality should allow for dynamic associations where multiple controls can be connected to multiple risks, and vice versa, without limitations. The interface should facilitate easy management and visualization of these complex relationships, ensuring clear and efficient risk-control mapping", "top_k": 5}
+[2025-07-13 12:19:46] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Invalid non-printable ASCII character in URL, '\n' at position 89.
+[2025-07-13 12:19:46] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Invalid non-printable ASCII character in URL, '\n' at position 89.
+[2025-07-13 12:19:55] [ERROR] [agent_logger.evidence_agent:85] - Gap analysis agent failed: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 80, in run_gap_analysis
+    result_content = await chain.ainvoke({"query": query, "evidence": combined_evidence, "context": context_str})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:20:00] [ERROR] [agent_logger.query_rephraser:51] - Query Decomposer failed: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 43, in decompose_query
+    result_content = await chain.ainvoke({"original_question": query, "context": context_str})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:20:04] [ERROR] [agent_logger.evidence_agent:85] - Gap analysis agent failed: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 80, in run_gap_analysis
+    result_content = await chain.ainvoke({"query": query, "evidence": combined_evidence, "context": context_str})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:20:08] [ERROR] [agent_logger.query_rephraser:51] - Query Decomposer failed: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 43, in decompose_query
+    result_content = await chain.ainvoke({"original_question": query, "context": context_str})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:20:13] [ERROR] [agent_logger.evidence_agent:85] - Gap analysis agent failed: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 80, in run_gap_analysis
+    result_content = await chain.ainvoke({"query": query, "evidence": combined_evidence, "context": context_str})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:20:17] [ERROR] [agent_logger.query_rephraser:51] - Query Decomposer failed: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 43, in decompose_query
+    result_content = await chain.ainvoke({"original_question": query, "context": context_str})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 12:20:17] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-13 12:43:32] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_453585d78d6f6ba5e18946466674bb7f
+[2025-07-13 12:43:32] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'so what is IMR framewrok...'. Received session_has_document flag: False
+[2025-07-13 12:43:35] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "What is the IMR framework in IBM OpenPages?", "top_k": 5}
+[2025-07-13 12:43:41] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-13 12:49:41] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_453585d78d6f6ba5e18946466674bb7f
+[2025-07-13 12:49:41] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'so what is IMR framewrok...'. Received session_has_document flag: False
+[2025-07-13 12:49:42] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "What is the IMR framework in IBM OpenPages?", "top_k": 5}
+[2025-07-13 12:49:50] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Does the IMR framework support integration with specific control frameworks like ISO 27001/2, NIST 800, or IEC 62443?", "top_k": 5}
+[2025-07-13 12:49:55] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-13 12:52:40] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_453585d78d6f6ba5e18946466674bb7f
+[2025-07-13 12:52:40] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Risk Assessment Consistency: 
+
+i. Enforce uniform ...'. Received session_has_document flag: False
+[2025-07-13 12:52:45] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "i. How can we enforce uniform terminology, assessment methods, and rating scales in risk assessments within IBM OpenPages GRC?", "top_k": 5}
+[2025-07-13 12:52:48] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "ii. What steps are required to create a comprehensive risk inventory in IBM OpenPages GRC, detailing risk name, description, owner, stakeholders, type, status, and assessment methodology?", "top_k": 5}
+[2025-07-13 12:52:52] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "iii. How can we save the history of changes of the risks and controls and track the last date of update in IBM OpenPages GRC?", "top_k": 5}
+[2025-07-13 12:53:09] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-13 12:59:27] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_453585d78d6f6ba5e18946466674bb7f
+[2025-07-13 12:59:27] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Risk Assessment Consistency:
+
+i. Enforce uniform t...'. Received session_has_document flag: False
+[2025-07-13 12:59:32] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "i. How can we enforce uniform terminology, assessment methods, and rating scales in IBM OpenPages GRC for risk assessment?", "top_k": 5}
+[2025-07-13 12:59:36] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "ii. What steps are required to create a comprehensive risk inventory in IBM OpenPages GRC, detailing risk name, description, owner, stakeholders, type, status, and assessment methodology?", "top_k": 5}
+[2025-07-13 12:59:40] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "iii. How can we save the history of changes of the risks and controls and the last date of update in IBM OpenPages GRC?", "top_k": 5}
+[2025-07-13 12:59:56] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-13 13:05:31] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_858021b67af386fc78381087e38a4f66
+[2025-07-13 13:05:31] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Risk Assessment Consistency:
+
+i. Enforce uniform t...'. Received session_has_document flag: False
+[2025-07-13 13:05:35] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "i. How can we enforce uniform terminology, assessment methods, and rating scales in IBM OpenPages GRC for risk assessment?", "top_k": 5}
+[2025-07-13 13:05:39] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "ii. What steps are required to create a comprehensive risk inventory in IBM OpenPages GRC, detailing risk name, description, owner, stakeholders, type, status, and assessment methodology?", "top_k": 5}
+[2025-07-13 13:05:43] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "iii. How can we save the history of changes of the risks and controls and the last date of update in IBM OpenPages GRC?", "top_k": 5}
+[2025-07-13 13:06:01] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-13 13:06:05] [ERROR] [agent_logger.answering_agent:54] - Error generating final answer: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\answering_agent.py", line 44, in make_final_answer
+    response_dict = await chain.ainvoke({"query": query, "evidence": evidence, "context": context_str})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 13:07:20] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_858021b67af386fc78381087e38a4f66
+[2025-07-13 13:07:20] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Risk Assessment Consistency:
+
+i. Enforce uniform t...'. Received session_has_document flag: False
+[2025-07-13 13:07:24] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "i. How can we enforce uniform terminology, assessment methods, and rating scales in IBM OpenPages GRC for risk assessment?", "top_k": 5}
+[2025-07-13 13:07:28] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "ii. What steps are required to create a comprehensive risk inventory in IBM OpenPages GRC, detailing risk name, description, owner, stakeholders, type, status, and assessment methodology?", "top_k": 5}
+[2025-07-13 13:07:32] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "iii. How can we save the history of changes of the risks and controls and the last date of update in IBM OpenPages GRC?", "top_k": 5}
+[2025-07-13 13:07:39] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-13 13:07:43] [ERROR] [agent_logger.answering_agent:54] - Error generating final answer: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\answering_agent.py", line 44, in make_final_answer
+    response_dict = await chain.ainvoke({"query": query, "evidence": evidence, "context": context_str})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 13:10:33] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_858021b67af386fc78381087e38a4f66
+[2025-07-13 13:10:33] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Risk Assessment Consistency:
+
+i. Enforce uniform t...'. Received session_has_document flag: False
+[2025-07-13 13:10:38] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "i. How can we enforce uniform terminology, assessment methods, and rating scales in IBM OpenPages GRC for risk assessment?", "top_k": 5}
+[2025-07-13 13:10:42] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "ii. What steps are required to create a comprehensive risk inventory in IBM OpenPages GRC, detailing risk name, description, owner, stakeholders, type, status, and assessment methodology?", "top_k": 5}
+[2025-07-13 13:10:46] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "iii. How can we save the history of changes of the risks and controls and the last date of update in IBM OpenPages GRC?", "top_k": 5}
+[2025-07-13 13:11:04] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-13 13:11:09] [ERROR] [agent_logger.answering_agent:54] - Error generating final answer: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 86, in parse_result
+    return parse_json_markdown(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 150, in parse_json_markdown
+    return _parse_json(json_str, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 166, in _parse_json
+    return parser(json_str)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\utils\json.py", line 123, in parse_partial_json
+    return json.loads(s, strict=strict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\answering_agent.py", line 44, in make_final_answer
+    response_dict = await chain.ainvoke({"query": query, "evidence": evidence, "context": context_str})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 219, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\base.py", line 280, in aparse_result
+    return await run_in_executor(None, self.parse_result, result, partial=partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 616, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\config.py", line 607, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\output_parsers\json.py", line 89, in parse_result
+    raise OutputParserException(msg, llm_output=text) from e
+langchain_core.exceptions.OutputParserException: Invalid json output: What can I assist you with today? Whether you have questions about a wide range of topics, need help with tasks, or just want to chat, I'm here to help. Here are a few examples of what we can do:
+
+1. **General Knowledge**: I can provide information on a variety of subjects, from science and history to literature and pop culture.
+
+2. **Explanations**: If there's a concept you're struggling to understand, I can try to break it down into simpler terms.
+
+3. **Language Translation**: I can translate words or phrases from one language to another.
+
+4. **Trivia and Fun Facts**: I can share interesting trivia and fun facts on various topics.
+
+5. **Recommendations**: Whether it's books, movies, music, or travel destinations, I can suggest options based on your preferences.
+
+6. **Task Assistance**: I can guide you through processes, like setting up an email account or understanding how to use a specific software.
+
+7. **Writing and Editing**: I can help with grammar, spelling, and sentence structure, or even brainstorm ideas for your next piece of writing.
+
+8. **Coding and Programming**: I can help explain coding concepts, debug simple code snippets, or suggest resources for learning new programming languages.
+
+Please share what you're interested in, and let's get started!
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+[2025-07-13 13:12:16] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_858021b67af386fc78381087e38a4f66
+[2025-07-13 13:12:16] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Risk Assessment Consistency:
+
+i. Enforce uniform t...'. Received session_has_document flag: False
+[2025-07-13 13:12:21] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "i. How can we enforce uniform terminology, assessment methods, and rating scales in IBM OpenPages GRC for risk assessment?", "top_k": 5}
+[2025-07-13 13:12:25] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "ii. What steps are required to create a comprehensive risk inventory in IBM OpenPages GRC, detailing risk name, description, owner, stakeholders, type, status, and assessment methodology?", "top_k": 5}
+[2025-07-13 13:12:29] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "iii. How can we save the history of changes of the risks and controls and the last date of update in IBM OpenPages GRC?", "top_k": 5}
+[2025-07-13 13:12:46] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-13 13:12:46] [ERROR] [agent_logger.answering_agent:54] - Error generating final answer: "Input to ChatPromptTemplate is missing variables {'format'}.  Expected: ['evidence', 'format', 'query'] Received: ['query', 'evidence', 'context']\nNote: if you intended {format} to be part of the string and not a variable, please escape it with double curly braces like: '{{format}}'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT "
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\answering_agent.py", line 44, in make_final_answer
+    response_dict = await chain.ainvoke({"query": query, "evidence": evidence, "context": context_str})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: "Input to ChatPromptTemplate is missing variables {'format'}.  Expected: ['evidence', 'format', 'query'] Received: ['query', 'evidence', 'context']\nNote: if you intended {format} to be part of the string and not a variable, please escape it with double curly braces like: '{{format}}'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT "
+[2025-07-13 13:13:36] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_b3abfdd4eec9f12b80b42d4937afdb68
+[2025-07-13 13:13:36] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Risk Assessment Consistency:
+
+i. Enforce uniform t...'. Received session_has_document flag: False
+[2025-07-13 13:13:40] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "i. How can we enforce uniform terminology, assessment methods, and rating scales in IBM OpenPages GRC for risk assessment?", "top_k": 5}
+[2025-07-13 13:13:44] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "ii. What steps are required to create a comprehensive risk inventory in IBM OpenPages GRC, detailing risk name, description, owner, stakeholders, type, status, and assessment methodology?", "top_k": 5}
+[2025-07-13 13:13:48] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "iii. How can we save the history of changes of the risks and controls and the last date of update in IBM OpenPages GRC?", "top_k": 5}
+[2025-07-13 13:14:06] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-13 13:14:06] [ERROR] [agent_logger.answering_agent:54] - Error generating final answer: "Input to ChatPromptTemplate is missing variables {'format'}.  Expected: ['evidence', 'format', 'query'] Received: ['query', 'evidence', 'context']\nNote: if you intended {format} to be part of the string and not a variable, please escape it with double curly braces like: '{{format}}'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT "
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\answering_agent.py", line 44, in make_final_answer
+    response_dict = await chain.ainvoke({"query": query, "evidence": evidence, "context": context_str})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: "Input to ChatPromptTemplate is missing variables {'format'}.  Expected: ['evidence', 'format', 'query'] Received: ['query', 'evidence', 'context']\nNote: if you intended {format} to be part of the string and not a variable, please escape it with double curly braces like: '{{format}}'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT "
+[2025-07-13 13:15:43] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_b3abfdd4eec9f12b80b42d4937afdb68
+[2025-07-13 13:15:43] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Risk Assessment Consistency:
+
+i. Enforce uniform t...'. Received session_has_document flag: False
+[2025-07-13 13:15:48] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "i. How can we enforce uniform terminology, assessment methods, and rating scales in IBM OpenPages GRC for risk assessment?", "top_k": 5}
+[2025-07-13 13:15:52] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "ii. What steps are required to create a comprehensive risk inventory in IBM OpenPages GRC, detailing risk name, description, owner, stakeholders, type, status, and assessment methodology?", "top_k": 5}
+[2025-07-13 13:15:55] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "iii. How can we save the history of changes of the risks and controls and the last date of update in IBM OpenPages GRC?", "top_k": 5}
+[2025-07-13 13:16:13] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-13 13:18:01] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_06f6054773b1ac731e9c39e4e95f31c7
+[2025-07-13 13:18:01] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Risk Assessment Consistency:
+
+i. Enforce uniform t...'. Received session_has_document flag: False
+[2025-07-13 13:18:06] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "i. How can we enforce uniform terminology, assessment methods, and rating scales in IBM OpenPages GRC for risk assessment?", "top_k": 5}
+[2025-07-13 13:18:10] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "ii. What steps are required to create a comprehensive risk inventory in IBM OpenPages GRC, detailing risk name, description, owner, stakeholders, type, status, and assessment methodology?", "top_k": 5}
+[2025-07-13 13:18:14] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "iii. How can we save the history of changes of the risks and controls and the last date of update in IBM OpenPages GRC?", "top_k": 5}
+[2025-07-13 13:18:30] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-13 13:22:36] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_8ea64eaa329d299e5da770b89ea1118e
+[2025-07-13 13:22:36] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Risk Assessment Consistency:
+
+i. Enforce uniform t...'. Received session_has_document flag: False
+[2025-07-13 13:22:41] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "i. How can we enforce uniform terminology, assessment methods, and rating scales in IBM OpenPages GRC for risk assessment?", "top_k": 5}
+[2025-07-13 13:22:45] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "ii. What steps are required to create a comprehensive risk inventory in IBM OpenPages GRC, detailing risk name, description, owner, stakeholders, type, status, and assessment methodology?", "top_k": 5}
+[2025-07-13 13:22:49] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "iii. How can we save the history of changes of the risks and controls and the last date of update in IBM OpenPages GRC?", "top_k": 5}
+[2025-07-13 13:23:07] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-13 13:23:07] [ERROR] [agent_logger.answering_agent:54] - Error generating final answer: 'Input to ChatPromptTemplate is missing variables {\'\\n  "final_answer"\'}.  Expected: [\'\\n  "final_answer"\', \'evidence\', \'query\'] Received: [\'query\', \'evidence\', \'context\']\nNote: if you intended {\n  "final_answer"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "final_answer"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\answering_agent.py", line 44, in make_final_answer
+    response_dict = await chain.ainvoke({"query": query, "evidence": evidence, "context": context_str})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'\\n  "final_answer"\'}.  Expected: [\'\\n  "final_answer"\', \'evidence\', \'query\'] Received: [\'query\', \'evidence\', \'context\']\nNote: if you intended {\n  "final_answer"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "final_answer"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+[2025-07-13 13:24:06] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_8ea64eaa329d299e5da770b89ea1118e
+[2025-07-13 13:24:06] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Risk Assessment Consistency:
+
+i. Enforce uniform t...'. Received session_has_document flag: False
+[2025-07-13 13:24:11] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "i. How can we enforce uniform terminology, assessment methods, and rating scales in IBM OpenPages GRC for risk assessment?", "top_k": 5}
+[2025-07-13 13:24:15] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "ii. What steps are required to create a comprehensive risk inventory in IBM OpenPages GRC, detailing risk name, description, owner, stakeholders, type, status, and assessment methodology?", "top_k": 5}
+[2025-07-13 13:24:19] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "iii. How can we save the history of changes of the risks and controls and the last date of update in IBM OpenPages GRC?", "top_k": 5}
+[2025-07-13 13:24:25] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.

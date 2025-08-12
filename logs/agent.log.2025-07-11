@@ -1,0 +1,159 @@
+[2025-07-11 22:49:09] [INFO] [agent_logger.bowmen_agent_pipeline:50] - Initializing GRCPipeline for collection: rfp_python_test_session_0011
+[2025-07-11 22:49:09] [INFO] [agent_logger.bowmen_agent_pipeline:107] - GRCPipeline run started. Question: 'Does the tool support Dutch?...'. Received session_has_document flag: True
+[2025-07-11 22:49:45] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Does the tool support Dutch?", "top_k": 5}
+[2025-07-11 22:49:49] [ERROR] [agent_logger.evidence_agent:52] - Quick filter agent failed: 'Input to ChatPromptTemplate is missing variables {\'"is_relevant"\'}.  Expected: [\'"is_relevant"\', \'context\', \'evidence\', \'query\'] Received: [\'query\', \'evidence\', \'context\']\nNote: if you intended {"is_relevant"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"is_relevant"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 45, in run_quick_relevance_check
+    result = await chain.ainvoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'"is_relevant"\'}.  Expected: [\'"is_relevant"\', \'context\', \'evidence\', \'query\'] Received: [\'query\', \'evidence\', \'context\']\nNote: if you intended {"is_relevant"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"is_relevant"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+[2025-07-11 22:49:50] [ERROR] [agent_logger.evidence_agent:85] - Gap analysis agent failed: 'Input to ChatPromptTemplate is missing variables {\'"Sufficient"\'}.  Expected: [\'"Sufficient"\', \'context\', \'evidence\', \'query\'] Received: [\'query\', \'evidence\', \'context\']\nNote: if you intended {"Sufficient"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"Sufficient"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 80, in run_gap_analysis
+    result_content = await chain.ainvoke({"query": query, "evidence": combined_evidence, "context": context_str})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'"Sufficient"\'}.  Expected: [\'"Sufficient"\', \'context\', \'evidence\', \'query\'] Received: [\'query\', \'evidence\', \'context\']\nNote: if you intended {"Sufficient"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"Sufficient"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+[2025-07-11 22:49:50] [ERROR] [agent_logger.query_rephraser:87] - Query Rephraser failed: 'Input to ChatPromptTemplate is missing variables {\'"rephrased_question"\'}.  Expected: [\'"rephrased_question"\', \'original_question\', \'review\'] Received: [\'original_question\', \'review\', \'context\']\nNote: if you intended {"rephrased_question"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"rephrased_question"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 80, in refine_query
+    result = await chain.ainvoke({
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'"rephrased_question"\'}.  Expected: [\'"rephrased_question"\', \'original_question\', \'review\'] Received: [\'original_question\', \'review\', \'context\']\nNote: if you intended {"rephrased_question"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"rephrased_question"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+[2025-07-11 22:49:50] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-11 22:49:50] [ERROR] [agent_logger.answering_agent:76] - Error generating final answer: 'Input to ChatPromptTemplate is missing variables {\'"final_answer"\'}.  Expected: [\'"final_answer"\', \'evidence\', \'query\'] Received: [\'query\', \'evidence\', \'context\']\nNote: if you intended {"final_answer"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"final_answer"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\answering_agent.py", line 47, in make_final_answer
+    response_message = await chain.ainvoke({"query": query, "evidence": evidence, "context": context_str})
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'"final_answer"\'}.  Expected: [\'"final_answer"\', \'evidence\', \'query\'] Received: [\'query\', \'evidence\', \'context\']\nNote: if you intended {"final_answer"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"final_answer"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+[2025-07-11 22:52:03] [INFO] [agent_logger.bowmen_agent_pipeline:50] - Initializing GRCPipeline for collection: rfp_python_test_session_0011
+[2025-07-11 22:52:03] [INFO] [agent_logger.bowmen_agent_pipeline:107] - GRCPipeline run started. Question: 'Does the tool support Dutch?...'. Received session_has_document flag: False
+[2025-07-11 22:52:27] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Does the tool support Dutch?", "top_k": 5}
+[2025-07-11 22:52:30] [ERROR] [agent_logger.evidence_agent:52] - Quick filter agent failed: 'Input to ChatPromptTemplate is missing variables {\'"is_relevant"\'}.  Expected: [\'"is_relevant"\', \'context\', \'evidence\', \'query\'] Received: [\'query\', \'evidence\', \'context\']\nNote: if you intended {"is_relevant"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"is_relevant"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\evidencer.py", line 45, in run_quick_relevance_check
+    result = await chain.ainvoke({"query": query, "evidence": evidence or "No evidence provided","context": context_str})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'"is_relevant"\'}.  Expected: [\'"is_relevant"\', \'context\', \'evidence\', \'query\'] Received: [\'query\', \'evidence\', \'context\']\nNote: if you intended {"is_relevant"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"is_relevant"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+[2025-07-11 22:52:50] [ERROR] [agent_logger.query_rephraser:87] - Query Rephraser failed: 'Input to ChatPromptTemplate is missing variables {\'"rephrased_question"\'}.  Expected: [\'"rephrased_question"\', \'original_question\', \'review\'] Received: [\'original_question\', \'review\', \'context\']\nNote: if you intended {"rephrased_question"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"rephrased_question"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\query_rephraser.py", line 80, in refine_query
+    result = await chain.ainvoke({
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'"rephrased_question"\'}.  Expected: [\'"rephrased_question"\', \'original_question\', \'review\'] Received: [\'original_question\', \'review\', \'context\']\nNote: if you intended {"rephrased_question"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"rephrased_question"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+[2025-07-11 22:52:50] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-11 22:52:50] [ERROR] [agent_logger.answering_agent:76] - Error generating final answer: 'Input to ChatPromptTemplate is missing variables {\'"final_answer"\'}.  Expected: [\'"final_answer"\', \'evidence\', \'query\'] Received: [\'query\', \'evidence\', \'context\']\nNote: if you intended {"final_answer"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"final_answer"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\answering_agent.py", line 47, in make_final_answer
+    response_message = await chain.ainvoke({"query": query, "evidence": evidence, "context": context_str})
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 3075, in ainvoke
+    input = await coro_with_context(part(), context, create_task=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 242, in ainvoke
+    return await self._acall_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\runnables\base.py", line 1981, in _acall_with_config
+    output: Output = await coro_with_context(coro, context)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 195, in _aformat_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\langchain_core\prompts\base.py", line 183, in _validate_input
+    raise KeyError(
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'"final_answer"\'}.  Expected: [\'"final_answer"\', \'evidence\', \'query\'] Received: [\'query\', \'evidence\', \'context\']\nNote: if you intended {"final_answer"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"final_answer"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+[2025-07-11 22:54:16] [INFO] [agent_logger.bowmen_agent_pipeline:50] - Initializing GRCPipeline for collection: rfp_python_test_session_0011
+[2025-07-11 22:54:16] [INFO] [agent_logger.bowmen_agent_pipeline:107] - GRCPipeline run started. Question: 'Does the tool support Dutch?...'. Received session_has_document flag: False
+[2025-07-11 22:54:40] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Does the tool support Dutch?", "top_k": 5}
+[2025-07-11 22:55:04] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Does IBM OpenPages GRC support the Dutch language?", "top_k": 5}
+[2025-07-11 22:55:35] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-11 22:58:12] [INFO] [agent_logger.bowmen_agent_pipeline:50] - Initializing GRCPipeline for collection: rfp_python_test_session_0011
+[2025-07-11 22:58:12] [INFO] [agent_logger.bowmen_agent_pipeline:107] - GRCPipeline run started. Question: 'Consolidated Risk Cataloging: 
+
+i. Provide a unifi...'. Received session_has_document flag: False
+[2025-07-11 22:58:32] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Provide a unified view of risks and internal controls in IBM OpenPages, and enable mapping of risks to business processes, controls, risk statements, and scenarios.", "top_k": 5}
+[2025-07-11 22:58:47] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.

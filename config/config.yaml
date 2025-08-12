@@ -1,0 +1,33 @@
+# Google Search Configuration
+google_api_keys:
+  - "AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM"
+  - "AIzaSyDK3PYnI7g2Q0APLsooWPKGeKRlI2VSfb0"
+google_search_engine_id: "00162c3db1cac4da4"
+
+scrape_limit: 3
+
+# LLM Configuration
+llm:
+  model_id: "ibm/granite-3-2-8b-instruct"
+  url: "https://us-south.ml.cloud.ibm.com"
+  project_id: "d2fa9b9a-8b48-4a72-bd1b-ed5152f3c6b4"
+  api_key: "KRlp6IwGyo6MHJcrA1SyVrMSpGkNny07UL20QT7gAP_h"
+  temperature: 0
+
+# External API Endpoints
+contexual_agent:
+  indexer_service_url: "http://109.228.59.105:9014/index-files/"
+  retriver_service_url: "http://109.228.59.105:9016/search"
+
+
+rfp_agent:
+  retriver_service_url: "http://109.228.59.105:9010/search"
+  collection_name: "rfp_spreadsheet_collection_v1"
+
+server:
+  # The list of frontend URLs that are allowed to access this backend
+  allowed_origins:
+    - "http://localhost:8001"
+    - "http://127.0.0.1:8001"
+    - "http://localhost:5173"
+  api_key: "Bwmn_sk_u8x5fE7Yt2RzP9wBvNcK6gH4jL1oS3aV"

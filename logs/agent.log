@@ -1,0 +1,66 @@
+[2025-07-15 09:08:50] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_ef980e845568d4018e4c493c3ff4a38e
+[2025-07-15 09:08:50] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Third-parties SLAs...'. Received session_has_document flag: False
+[2025-07-15 09:08:55] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "What are the details regarding third-party SLAs in IBM OpenPages?", "top_k": 5}
+[2025-07-15 09:09:02] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Third-party Service Level Agreements (SLAs) details", "top_k": 5}
+[2025-07-15 09:09:02] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=Third-party%20Service%20Level%20Agreements%20(SLAs)%20details&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:09:06] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Specific details of third-party service level agreements", "top_k": 5}
+[2025-07-15 09:09:14] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Specific details of third-party SLAs", "top_k": 5}
+[2025-07-15 09:09:14] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=Specific%20details%20of%20third-party%20SLAs&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:09:15] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-15 09:17:23] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_ef980e845568d4018e4c493c3ff4a38e
+[2025-07-15 09:17:23] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'third parties SLA...'. Received session_has_document flag: False
+[2025-07-15 09:17:24] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "What are the details regarding third-party service level agreements in IBM OpenPages GRC?", "top_k": 5}
+[2025-07-15 09:17:25] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=What%20are%20the%20details%20regarding%20third-party%20service%20level%20agreements%20in%20IBM%20OpenPages%20GRC?&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:17:29] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Third-party Service Level Agreements (SLAs)", "top_k": 5}
+[2025-07-15 09:17:30] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=Third-party%20Service%20Level%20Agreements%20(SLAs)&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:17:35] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Third-party specific Service Level Agreements (SLAs)", "top_k": 5}
+[2025-07-15 09:17:35] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=Third-party%20specific%20Service%20Level%20Agreements%20(SLAs)&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:17:41] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-15 09:25:07] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_ef980e845568d4018e4c493c3ff4a38e
+[2025-07-15 09:25:07] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Third-parties SLAs...'. Received session_has_document flag: False
+[2025-07-15 09:25:09] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "What are the details regarding third-party SLAs in IBM OpenPages?", "top_k": 5}
+[2025-07-15 09:25:15] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Third-party Service Level Agreements (SLAs) details", "top_k": 5}
+[2025-07-15 09:25:19] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Specific details of third-party service level agreements", "top_k": 5}
+[2025-07-15 09:25:20] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=Specific%20details%20of%20third-party%20service%20level%20agreements&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:25:28] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Specific details of third-party SLAs", "top_k": 5}
+[2025-07-15 09:25:28] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=Specific%20details%20of%20third-party%20SLAs&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:25:29] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-15 09:33:18] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_ef980e845568d4018e4c493c3ff4a38e
+[2025-07-15 09:33:18] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'Third-parties SLAs...'. Received session_has_document flag: False
+[2025-07-15 09:33:20] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "What are the details regarding third-party SLAs in IBM OpenPages?", "top_k": 5}
+[2025-07-15 09:33:20] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=What%20are%20the%20details%20regarding%20third-party%20SLAs%20in%20IBM%20OpenPages?&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:33:26] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Third-party Service Level Agreements (SLAs) details", "top_k": 5}
+[2025-07-15 09:33:26] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=Third-party%20Service%20Level%20Agreements%20(SLAs)%20details&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:33:30] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Specific details of third-party service level agreements", "top_k": 5}
+[2025-07-15 09:33:30] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=Specific%20details%20of%20third-party%20service%20level%20agreements&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:33:38] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "Specific details of third-party SLAs", "top_k": 5}
+[2025-07-15 09:33:38] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=Specific%20details%20of%20third-party%20SLAs&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:33:39] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-15 09:49:06] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_ef980e845568d4018e4c493c3ff4a38e
+[2025-07-15 09:49:06] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'so what is ibm openpages in a nutshell...'. Received session_has_document flag: False
+[2025-07-15 09:49:09] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "What is IBM OpenPages GRC?", "top_k": 5}
+[2025-07-15 09:49:09] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=What%20is%20IBM%20OpenPages%20GRC?&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:49:16] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "What tools or packages does IBM OpenPages GRC interface with?", "top_k": 5}
+[2025-07-15 09:49:17] [WARNING] [agent_logger.tools_agent:132] - An unexpected error occurred during Google search: Client error '429 Too Many Requests' for url 'https://www.googleapis.com/customsearch/v1?q=What%20tools%20or%20packages%20does%20IBM%20OpenPages%20GRC%20interface%20with?&key=AIzaSyAg9TlYm8EYDnlp6ZdOtKu0ffipZVXVMaM&cx=00162c3db1cac4da4'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+[2025-07-15 09:49:24] [INFO] [agent_logger.answering_agent:32] - Generating final answer for query.
+[2025-07-15 09:56:19] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_5d90dcfd617ed49941ef5100f88cef04
+[2025-07-15 09:56:19] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'hello...'. Received session_has_document flag: False
+[2025-07-15 10:01:41] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_ef980e845568d4018e4c493c3ff4a38e
+[2025-07-15 10:01:41] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'hello...'. Received session_has_document flag: False
+[2025-07-15 10:02:44] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_fee90fb30d4dcdcdd34a67a6a79a42b5
+[2025-07-15 10:02:44] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'hello...'. Received session_has_document flag: False
+[2025-07-15 10:05:06] [INFO] [agent_logger.bowmen_agent_pipeline:38] - Initializing GRCPipeline for collection: rfp_chat_fee90fb30d4dcdcdd34a67a6a79a42b5
+[2025-07-15 10:05:06] [INFO] [agent_logger.bowmen_agent_pipeline:112] - GRCPipeline run started. Question: 'hello...'. Received session_has_document flag: False

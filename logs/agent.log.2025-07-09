@@ -1,0 +1,159 @@
+[2025-07-09 12:29:12] [INFO] [agent_logger.bowmen_agent_pipeline:50] - Initializing GRCPipeline for collection: rfp_python_test_session_001
+[2025-07-09 12:29:12] [INFO] [agent_logger.bowmen_agent_pipeline:107] - GRCPipeline run started. Question: 'what is the ibm openpages?...'. Received session_has_document flag: True
+[2025-07-09 12:29:15] [ERROR] [agent_logger.contextual_agent:145] - External search service request failed: All connection attempts failed
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\contexual_agent.py", line 138, in find_and_interpret_context
+    response = await self.async_client.post(self.api_url, json=payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_client.py", line 1859, in post
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+[2025-07-09 12:29:17] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "what is the IBM OpenPages?", "top_k": 5}
+[2025-07-09 12:29:24] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-09 12:35:49] [INFO] [agent_logger.bowmen_agent_pipeline:50] - Initializing GRCPipeline for collection: rfp_python_test_session_001
+[2025-07-09 12:35:49] [INFO] [agent_logger.bowmen_agent_pipeline:107] - GRCPipeline run started. Question: 'what is the ibm openpages?...'. Received session_has_document flag: True
+[2025-07-09 12:35:52] [ERROR] [agent_logger.contextual_agent:145] - External search service request failed: All connection attempts failed
+Traceback (most recent call last):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\contexual_agent.py", line 138, in find_and_interpret_context
+    response = await self.async_client.post(self.api_url, json=payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_client.py", line 1859, in post
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+[2025-07-09 12:35:53] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "what is the IBM OpenPages?", "top_k": 5}
+[2025-07-09 12:35:59] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-09 12:56:57] [INFO] [agent_logger.bowmen_agent_pipeline:50] - Initializing GRCPipeline for collection: rfp_python_test_session_001
+[2025-07-09 12:56:57] [INFO] [agent_logger.bowmen_agent_pipeline:107] - GRCPipeline run started. Question: 'what is the ibm openpages?...'. Received session_has_document flag: True
+[2025-07-09 12:56:59] [ERROR] [agent_logger.contextual_agent:153] - An unexpected error occurred during external search: Redirect response '307 Temporary Redirect' for url 'http://109.228.59.105:9016/search'
+Redirect location: 'http://109.228.59.105:9016/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307
+Traceback (most recent call last):
+  File "c:\Users\HarshaVardhan\OneDrive - Bowmen Group Ltd\Desktop\Agents\RFP Agent CE\Agents\contexual_agent.py", line 139, in find_and_interpret_context
+    response.raise_for_status()
+  File "C:\Users\HarshaVardhan\.conda\envs\bowmen_agent\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Redirect response '307 Temporary Redirect' for url 'http://109.228.59.105:9016/search'
+Redirect location: 'http://109.228.59.105:9016/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307
+[2025-07-09 12:57:01] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "what is the IBM OpenPages?", "top_k": 5}
+[2025-07-09 12:57:07] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-09 12:59:21] [INFO] [agent_logger.bowmen_agent_pipeline:50] - Initializing GRCPipeline for collection: rfp_python_test_session_001
+[2025-07-09 12:59:21] [INFO] [agent_logger.bowmen_agent_pipeline:107] - GRCPipeline run started. Question: 'what is the ibm openpages?...'. Received session_has_document flag: True
+[2025-07-09 12:59:25] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "what is the IBM OpenPages?", "top_k": 5}
+[2025-07-09 12:59:31] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-09 13:27:52] [INFO] [agent_logger.bowmen_agent_pipeline:50] - Initializing GRCPipeline for collection: rfp_python_test_session_001
+[2025-07-09 13:27:52] [INFO] [agent_logger.bowmen_agent_pipeline:107] - GRCPipeline run started. Question: 'what is the ibm openpages?...'. Received session_has_document flag: True
+[2025-07-09 13:27:55] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "what is the IBM OpenPages?", "top_k": 5}
+[2025-07-09 13:28:02] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.
+[2025-07-09 13:34:29] [INFO] [agent_logger.bowmen_agent_pipeline:50] - Initializing GRCPipeline for collection: rfp_python_test_session_001
+[2025-07-09 13:34:29] [INFO] [agent_logger.bowmen_agent_pipeline:107] - GRCPipeline run started. Question: 'what is the ibm openpages?...'. Received session_has_document flag: True
+[2025-07-09 13:34:34] [INFO] [agent_logger.tools_agent:73] - Sending payload to VectorDB: {"collection_name": "rfp_spreadsheet_collection_v1", "question": "what is the IBM OpenPages?", "top_k": 5}
+[2025-07-09 13:34:44] [INFO] [agent_logger.answering_agent:33] - Generating final answer for query.

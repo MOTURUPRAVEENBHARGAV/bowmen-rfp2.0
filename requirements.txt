@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+langchain
+langchain_ibm
+langchain_milvus
+langchain_community
+tenacity
+ibm_watsonx_ai
+pymilvus
+ujson
+pyarrow
+google
+protobuf
+html2text
+bs4
+scikit-learn
